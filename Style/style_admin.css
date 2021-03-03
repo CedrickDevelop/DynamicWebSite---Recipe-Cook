@@ -1,0 +1,606 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: white;
+  font-family: roboto;
+  width: 100%;
+}
+
+nav {
+  margin-top: 0px;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background-color: #9E3B20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+}
+
+.menu {
+  margin-left: 20px;
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-liste {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-items {
+  margin: 0 20px;
+  font-size: 2rem;
+  line-height: 50px;
+}
+
+.menu-items a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.menu-items a::after {
+  content: "";
+  display: block;
+  width: 90%;
+  margin-left: 15px;
+  height: 1px;
+  position: relative;
+  top: -5px;
+  background-color: wheat;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.menu-items a:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.menu-burger {
+  display: none;
+}
+
+.identification {
+  width: 20%;
+}
+
+.identification a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 100px) {
+  .menu {
+    display: none;
+  }
+  .menu-burger {
+    width: 50%;
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .identification {
+    width: 50%;
+    text-align: center;
+  }
+  .identification a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .menu-items a {
+    font-size: 1rem;
+  }
+  .menu-items a::after {
+    top: -10px;
+  }
+  .menu-burger {
+    display: none;
+  }
+  .identification a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu-items a {
+    font-size: 1rem;
+  }
+  .menu-items a::after {
+    top: -10px;
+  }
+  .identification a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu-items a {
+    font-size: 1.1rem;
+  }
+  .menu-items a::after {
+    top: -10px;
+  }
+  .identification a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .menu-items {
+    font-size: 1.4rem;
+  }
+  .identification a {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .menu-items {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+  .menu-items a {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+  .identification a {
+    font-size: 1.4rem;
+  }
+}
+/* ////////////////////////////////////////////////
+***************ACCUEIL*************************** */
+
+/* ////////////////////////////////////////////////
+***************ACCUEIL*************************** */
+.titre {
+  margin-top: 0px;
+  height: 170px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  
+}
+
+h1 {
+  color: #28429E;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 4.5rem;
+  font-family: cookie;
+  margin-top: 90px;
+}
+.accueil{
+  width: 100%;
+  height: 300px;
+  margin-top: 30px;
+  background-color: wheat;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  border-radius: 120px 10px 120px 10px;
+} 
+.header-texte{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.header-texte h2{
+  margin-top: 10px;
+  font-size: 3.5rem;
+  font-family: cookie;
+  text-align: center;
+}
+
+.header-texte h3{
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-family: cookie;
+  text-align: center;
+}
+.header-texte h5 a{
+  display: block;
+  width: 140px;
+  height: 40px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+ 
+ }
+.header-texte h5{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.header-image{
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px 10px 120px 10px;
+}
+.header-image img{
+  height: 100%;
+  align-self: flex-end;
+}
+/* ////////////////////////////////////////////////
+***************RESPONSIVE*************************** */
+@media screen and (max-width: 325px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+  .accueil{
+    margin-top: 35px;
+    height: 450px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-radius: 80px 10px 120px 10px;
+  }
+  .header-texte{
+    width: 100%;
+  }
+  .header-texte h2{
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+  .header-image{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+
+  }
+  .header-image img{
+    height: 100%;
+
+  }
+
+  .recette-texte{
+    width:200px;
+  }
+}
+
+
+@media screen and (min-width: 325px) and (max-width:600px)  {
+
+  .accueil{
+    margin-top: 35px;
+    height: 450px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-radius: 80px 10px 120px 10px;
+  }
+  .header-texte{
+    width: 100%;
+  }
+  .header-image{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+
+  }
+  .header-image img{
+    height: 100%;
+
+  }
+  h1 {
+    font-size: 3rem;
+    margin-top: 110px;
+  }
+  .header-texte h2{
+    margin-top: 20px;
+    font-size: 2.5rem;
+  }
+  .header-texte h3{
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+
+
+}
+@media screen and (min-width: 600px) and (max-width:800px)  {
+
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 110px;
+  }
+
+  .header-texte h2{
+    margin-top: 20px;
+    font-size: 3rem;
+  }
+  h1 {
+      font-size: 4rem;
+      margin-top: 110px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width:1000px) {
+
+  .header-texte h2{
+    margin-top: 20px;
+    font-size: 3.5rem;
+  }
+  .accueil{
+    margin-top: 30px;
+    height: 300px;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border-radius: 80px 10px 120px 10px;
+  }
+
+}
+/* ////////////////////////////////////////////////
+*************FORMULAIRE CUISINIER*************************** */
+
+#insert_cuisinier {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+#insert_cuisinier h2{
+  margin: 10px;
+  font-size: 3rem;
+  font-family: cookie;
+  text-align: center;
+
+}
+
+.formulaire{
+  width: 50%;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.formulaire label{
+  width: 50%;
+  margin-top: 15px;
+
+}
+
+.formulaire input{
+  width: 50%;
+  width: 200px;
+  margin-top: 15px;
+  height: 30px;
+  padding-left: 10px;
+  color: #040f35;
+  font-weight: bold;
+
+
+}
+.bouton .bouton-cuisinier{
+  width: 200px;
+  border-radius: 10px 10px 10px 10px;
+  border: none;
+  color :#28429E;
+  background-color: #9e3b2028;
+
+}
+
+
+
+/* ////////////////////////////////////////////////
+*************FORMULAIRE RECETTE*************************** */
+
+.insert_recette {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+} 
+.insert_recette h2{
+  margin: 10px;
+  font-size: 3rem;
+  font-family: cookie;
+  text-align: center;
+
+}
+
+.formulaire{
+  width: 50%;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formulaire label{
+  width: 50%;
+  margin-top: 15px;
+  height: 30px;
+  line-height: 30px;
+
+}
+
+.formulaire input{
+  width: 50%;
+  width: 200px;
+  margin-top: 15px;
+  height: 30px;
+  padding-left: 10px;
+  color: #040f35;
+  font-weight: bold;
+}
+.visible_input{
+  line-height: 30px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+
+.formulaire .bouton{
+  width: 200px;
+  border-radius: 10px 10px 10px 10px;
+  border: none;
+  color :#28429E;
+  background-color: #9e3b2028;
+
+}
+
+.formulaire .textarea{
+  min-width: 200px;
+  width: 550px;
+  height: 200px;
+  margin-top: 15px;
+  padding-left: 10px;
+  color: #040f35;
+  font-weight: bold;
+} 
+.formulaire #visible_recette{
+  max-width: 50px;
+  width: 25%;
+  height: 30px;
+  margin-top: 15px;
+  padding-left: 10px;
+  color: #040f35;
+  font-weight: bold;
+} 
+
+
+/* ////////////////////////////////////////////////
+***************FOOTER*************************** */
+footer p{
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+
